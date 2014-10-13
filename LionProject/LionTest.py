@@ -10,33 +10,32 @@ class MyLionTest(TestCase):
     def test_Sit_Antilopa(self):
         l = MyLion("Sit")
         l.meet("Antilopa")
+        self.assertEqual("Sit", l.state, "Error")
 
     def test_Goloden_Antilopa(self):
         l = MyLion("Goloden")
         l.meet("Antilopa")
+        self.assertEqual("Sit", l.state, "Error")
 
     def test_Sit_Hunter(self):
         l = MyLion("Sit")
         l.meet("Hunter")
+        self.assertEqual("Sit", l.state, "Error")
 
     def test_Goloden_Hunter(self):
         l = MyLion("Goloden")
         l.meet("Hunter")
+        self.assertEqual("Goloden", l.state, "Error")
 
     def test_Sit_Tree(self):
         l = MyLion("Sit")
         l.meet("Tree")
+        self.assertEqual("Goloden", l.state, "Error")
 
     def test_Goloden_Tree(self):
         l = MyLion("Goloden")
         l.meet("Tree")
-
-    def test_RandomValue(self):
-        l = MyLion("Goloden")
-        i = 0
-        while i < 100:
-            l.random()
-            i = i+1
+        self.assertEqual("Goloden", l.state, "Error")
 
 
 if __name__ == '__main__':
