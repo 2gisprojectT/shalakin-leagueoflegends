@@ -35,12 +35,3 @@ class MyLion:
                         else:
                             print("Tree")
                             print("Lion sleep under the tree")
-
-    def random(self):
-        tmp = random.randrange(1, 4, 1)
-        if (tmp == 1):
-            self.meet("Antilopa")
-        else:
-            if (tmp == 2):
-                self.meet(("Hunter"))
-            else: self.meet(("Tree"))
