@@ -1,19 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="https://support.leagueoflegends.com/" />
-<title>Тест авторизации</title>
+<link rel="selenium.base" href="http://ru.leagueoflegends.com/" />
+<title>Авторизация</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">тест2</td></tr>
+<tr><td rowspan="1" colspan="3">Авторизация</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/home</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Поддержка</td>
 	<td></td>
 </tr>
 <tr>
@@ -22,54 +27,64 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>name=commit</td>
-	<td></td>
-</tr>
-<tr>
 	<td>type</td>
 	<td>id=user_email</td>
-	<td>qq</td>
+	<td>deathtotti@yandex.ru</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=user_password</td>
-	<td>ww</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>name=commit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=user_email</td>
-	<td>qq.ru</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>name=commit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=user_email</td>
-	<td>qwwwwq@.ru</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>name=commit</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=user_email</td>
-	<td>qwwwwq@re.ru</td>
+	<td>12345</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>name=commit</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.flash.flash-error</td>
+	<td>Комбинация адреса / пароля неверна, повторите попытку или получите новый пароль.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.flash.flash-error</td>
+	<td>Комбинация адреса / пароля неверна, повторите попытку или получите новый пароль.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=notice</td>
+	<td>С возвращением, Михаил!</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=notice</td>
+	<td>С возвращением, Михаил!</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=выход</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=notice</td>
+	<td>Вы завершили сеанс работы.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=notice</td>
+	<td>Вы завершили сеанс работы.</td>
 </tr>
 
 </tbody></table>
