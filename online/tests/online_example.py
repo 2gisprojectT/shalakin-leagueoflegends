@@ -15,7 +15,7 @@ class SeleniumTest(TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.driver.close()
-    """
+    
     def test_share(self):
         #self.driver.implicitly_wait(10)
         self.page.search_bar().search(u'кафе')
@@ -23,7 +23,7 @@ class SeleniumTest(TestCase):
         share_link = self.page.share_button().getLink()
         self.page.open(share_link)
         self.assertEqual(self.page.search_bar().string(), u'кафе')
-    """
+    
     def test_search_road(self):
         self.page.search_road().clickPassage()
         self.page.search_road().inputRoads(u'Золотая нива', u'Студенческая')
