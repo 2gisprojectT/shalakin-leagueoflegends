@@ -1,4 +1,6 @@
-class Page():
+class supportPage():
+
+
     def __init__(self, driver):
 
         self.driver = driver
@@ -6,9 +8,6 @@ class Page():
         self._sup_search_bar = None
         self._sup_login = None
         self._sup_logout = None
-        self._champions = None
-        self._champ_filter = None
-        self._champ_search = None
 
     def support(self):
         from helpers.support import Support
@@ -38,26 +37,5 @@ class Page():
             self._sup_logout = SupportLogout(self.driver, self.driver.find_element_by_css_selector(SupportLogout.selectors['self']))
         return self._sup_logout
 
-    def champions(self):
-        from helpers.champions import Champions
-
-        if self._champions is None:
-            self._champions = Champions(self.driver, self.driver.find_element_by_id(Champions.selectors['self']))
-        return self._champions
-
-    def champ_filter(self):
-        from helpers.champ_filters import ChampionsFilter
-
-        if self._champ_filter is None:
-            self._champ_filter = ChampionsFilter(self.driver, self.driver.find_element_by_id(ChampionsFilter.selectors['self']))
-        return self._champ_filter
-
-    def champ_search(self):
-        from helpers.champ_search import ChampionsSearch
-
-        if self._champ_search is None:
-            self._champ_search = ChampionsSearch(self.driver, self.driver.find_element_by_class_name(ChampionsSearch.selectors['self']))
-        return self._champ_search
-
-    def open(self, url):
-        self.driver.get(url)
+    def open(self):
+        self.driver.get("https://support.riotgames.com/hc/ru")
