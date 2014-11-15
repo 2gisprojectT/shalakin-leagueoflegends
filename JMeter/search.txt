@@ -1,0 +1,10 @@
+Ahri
+Ashe
+Ezreal
+Jax
+Lux
+Sivir
+Varus
+Vi
+Zac
+Zed
